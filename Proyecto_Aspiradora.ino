@@ -25,7 +25,7 @@
 #define led 7
 
 //Configuraciones para el PWM
-const int frequency = 3000;
+const int frequency = 1000;
 const int pwm_channel = 0;
 const int pwm_channel_2 = 0;
 const int resolution = 8;
@@ -146,6 +146,10 @@ void loop() {
     
     case obstaculo:
     Serial.println("Obstáculo");
+    digitalWrite(led, HIGH);
+    delay(300);
+    digitalWrite(led, LOW);
+    delay(300);
     //Se enciende los motores de las ruedas en retroceso.
     digitalWrite(forward_m1, LOW);
     digitalWrite(reverse_m1, HIGH);
